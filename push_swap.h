@@ -10,6 +10,9 @@ typedef struct s_list
     struct s_list   *next;
 }   t_list;
 
+//Alias exit
+#define EXIT do { write(2, "Error\n", 6); exit(1); } while (0)
+
 //Fonction principal
 t_list  *ft_stack(int *tab, int argc);
 
@@ -24,5 +27,8 @@ t_list	*ft_lstnew(void *content);
 void	ft_lstclear(t_list **lst);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 t_list	*ft_lstlast(t_list *lst);
+char	**ft_split(char const *s, char c);
 
 #endif
+
+
