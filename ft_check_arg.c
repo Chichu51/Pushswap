@@ -31,15 +31,59 @@ int	ft_check_digit(char *arg)
 	return (0);
 }
 
-//Fonction principale
-int	ft_check_arg(int argc, char **argv)
+//regarde si il y a des doublons
+int	ft_isdoublon(int *arg, int count)
 {
 	int	i;
-	int	count;
-	char **arguments;
+	int	y;
 
 	i = 0;
-	count = 0;
+	while (i < count)
+	{
+		y = i + 1;
+		while (y < count)
+		{
+			if (arg[i] == arg[y])
+				return (1);
+			y++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+//transforme en tableau de int
+int	*ft_tabint(int *count, char **arguments)
+{
+	int	i;
+	int	*tabint;
+
+	i = 0;
+	tabint = malloc(sizeof(int) * (*count));
+	if (tabint == NULL)
+		return (NULL);
+	while (arguments[i])
+	{
+		tabint[i] = ft_atoi(arguments[i]);
+		i++;
+	}
+	if (ft_isdoublon(tabint, *count) == 1)
+	{
+		free(tabint);
+		EXIT;
+	}
+	return (tabint);
+}
+
+//Fonction principale qui retourne le nombre d'arguments pour préparer le tableau
+int	*ft_check_arg(int argc, char **argv, int *count)
+{
+	int	i;
+	char **arguments;
+	int	*tabint;
+
+	i = 0;
+	*count = 0;
 	if (argc == 2)
 		arguments = ft_split(argv[1], ' ');
 	else
@@ -47,17 +91,27 @@ int	ft_check_arg(int argc, char **argv)
 	while (arguments[i])
 	{
 		ft_check_digit(arguments[i]);
-		count++;
+		(*count)++;
 		i++;
 	}
-	return (count);
+	tabint = ft_tabint(count, arguments);
+	return (tabint);
 }
 
 int	main(int argc, char **argv)
 {
-	if (argc < 2)
-		return (0);
+	int	*tabint;
+	int	i;
+	int	count;
 
-	printf("%d\n", ft_check_arg(argc, argv));
+	if (argc < 2)
+		EXIT;
+	i = 0;
+	tabint = ft_check_arg(argc, argv, &count);
+	while (i < count)
+	{
+		printf("%d\n", tabint[i]);
+		i++;
+	}
 	return (0);
 }
