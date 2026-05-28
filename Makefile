@@ -1,11 +1,12 @@
 NAME = push_swap.a
 
-MY_FONCTIONS = ft_check_arg.c \
-			   ft_tab_int
+MY_FONCTIONS = ft_push_swap.c \
+				ft_check_arg.c \
+			   ft_stack.c \
+			   sa_sb_ss.c
 
-
-MY_UTILS = ft_split.c \
-		   ft_atoi.c
+MY_UTILS = ft_check_utils.c \
+		   fonction_utiles.c
 
 
 MY_SRCS_ALL = $(MY_FONCTIONS) $(MY_UTILS)
