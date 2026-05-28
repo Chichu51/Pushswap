@@ -10,7 +10,7 @@ t_list *ft_stack(int *tab, int argc)
     t_list *stack;
     t_list  *current;
 
-    argc = argc - 1;
+   // argc = argc - 1;
     i = 1;
     stack = ft_lstnew(&tab[0]);
     if (stack == NULL)

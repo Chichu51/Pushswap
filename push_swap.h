@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmonjale <rmonjale@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 20:43:51 by rmonjale          #+#    #+#             */
+/*   Updated: 2026/05/28 20:43:52 by rmonjale         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -15,6 +27,7 @@ typedef struct s_list
 
 //Fonction principal
 t_list  *ft_stack(int *tab, int argc);
+int	*ft_check_arg(int argc, char **argv, int *count);
 
 //Fonction gestion des piles
 t_list  *ft_switch(t_list *stack);

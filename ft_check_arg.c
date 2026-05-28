@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check_arg.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmonjale <rmonjale@learner.42.tech>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/28 20:42:18 by rmonjale          #+#    #+#             */
+/*   Updated: 2026/05/28 20:42:23 by rmonjale         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 #include <stdio.h>
 //la fonction check args split les arguments avec espaces et les vérifie
@@ -18,8 +30,8 @@ int	ft_check_digit(char *arg)
 	i = 0;
 	if (arg[0] == '-' || arg[0] == '+')
 		i++;
-	if (arg[0] == '0' && arg[i + 1])
-		EXIT;
+/*	if (arg[0] == '0' && arg[i + 1])
+		EXIT;*/
 	if ((arg[0] == '+' || arg[0] == '-') && !(arg[1]))
 		EXIT;
 	while (arg[i])
@@ -98,7 +110,7 @@ int	*ft_check_arg(int argc, char **argv, int *count)
 	return (tabint);
 }
 
-int	main(int argc, char **argv)
+/*int	main(int argc, char **argv)
 {
 	int	*tabint;
 	int	i;
@@ -114,4 +126,4 @@ int	main(int argc, char **argv)
 		i++;
 	}
 	return (0);
-}
+}*/

@@ -1,9 +1,24 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: rmonjale <rmonjale@learner.42.tech>        +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/05/28 20:42:41 by rmonjale          #+#    #+#              #
+#    Updated: 2026/05/28 20:42:43 by rmonjale         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = push_swap.a
 
 MY_FONCTIONS = ft_push_swap.c \
 				ft_check_arg.c \
 			   ft_stack.c \
-			   sa_sb_ss.c
+			   sa_sb_ss.c \
+			   ft_lstnew.c \
+			   ft_lstclear.c \
+			   ft_lstadd_back.c
 
 MY_UTILS = ft_check_utils.c \
 		   fonction_utiles.c
