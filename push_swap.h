@@ -18,28 +18,28 @@
 
 typedef struct s_list
 {
-    int *content;
-    struct s_list   *next;
-}   t_list;
+	int						*content;
+	struct s_list			*next;
+}	t_list;
 
 //Alias exit
-#define EXIT do { write(2, "Error\n", 6); exit(1); } while (0)
+# define EXIT do { write(2, "Error\n", 6); exit(1); } while (0)
 
 //Fonction principal
-t_list  *ft_stack(int *tab, int argc);
-int	*ft_check_arg(int argc, char **argv, int *count);
+t_list	*ft_stack(int *tab, int argc);
+int		*ft_check_arg(int argc, char **argv, int *count);
 
 //Fonction gestion des piles
-t_list  *ft_switch(t_list *stack);
-void    ft_ss(t_list *stacka, t_list *stackb);
-t_list  *ft_sa(t_list *stacka);
-t_list  *ft_sb(t_list *stackb);
-void  ft_ra(t_list **stacka);
-void  ft_rb(t_list **stackb);
-void  ft_rr(t_list **stacka, t_list **stackb);
-void    ft_rra(t_list **stacka);
-void    ft_rrb(t_list **stackb);
-void    ft_rrr(t_list **stacka, t_list **stackb);
+t_list	*ft_switch(t_list *stack);
+void	ft_ss(t_list *stacka, t_list *stackb);
+t_list	*ft_sa(t_list *stacka);
+t_list	*ft_sb(t_list *stackb);
+void	ft_ra(t_list **stacka);
+void	ft_rb(t_list **stackb);
+void	ft_rr(t_list **stacka, t_list **stackb);
+void	ft_rra(t_list **stacka);
+void	ft_rrb(t_list **stackb);
+void	ft_rrr(t_list **stacka, t_list **stackb);
 void	ft_pb(t_list **stacka, t_list **stackb);
 void	ft_pa(t_list **stacka, t_list **stackb);
 
@@ -52,5 +52,3 @@ char	**ft_split(char const *s, char c);
 int		ft_atoi(const char *str);
 
 #endif
-
-

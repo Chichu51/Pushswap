@@ -58,7 +58,13 @@ void	ft_simple(t_list **stacka, int count)
 	t_list	*stackb;
 
 	stackb = NULL;
-	ft_rotation(stacka, &stackb, count);
+	while (count > 1)
+	{
+		ft_rotation(stacka, &stackb, count);
+		count--;
+	}
+	while (stackb)
+		ft_pb(stacka, &stackb);
 }
 
 int main(int argc, char **argv)
@@ -94,3 +100,4 @@ int main(int argc, char **argv)
 	printf("\n");
 */
 
+//cc -Wall -Wextra -Werror ft_simple.c ft_check_arg.c ft_check_utils.c fonctions_utiles.c ft_stack.c ra_rb_rr.c rra_rrb_rrr.c pa_pb.c

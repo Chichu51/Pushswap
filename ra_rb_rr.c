@@ -15,32 +15,32 @@
 //fonction generique de rotation normale
 void    ft_rotate(t_list **stack)
 {
-    t_list  *save;
-    t_list  *dernier;
+	t_list  *save;
+	t_list  *dernier;
 
     if (!(*stack) || !(*stack)->next)
-        return ;
-    save = *stack;
-    *stack = (*stack)->next;
-    dernier = *stack;
-    while (dernier->next != NULL)
-        dernier = dernier->next;
-    dernier->next = save;
-    save->next = NULL;
+		return ;
+	save = *stack;
+	*stack = (*stack)->next;
+	dernier = *stack;
+	while (dernier->next != NULL)
+		dernier = dernier->next;
+	dernier->next = save;
+	save->next = NULL;
 }
 
 //le premier deviens le dernier sur stack a
 void  ft_ra(t_list **stacka)
 {
-    ft_rotate(stacka);
-    write(1, "ra\n", 3);
+	ft_rotate(stacka);
+	write(1, "ra\n", 3);
 }
 
 //le premier deviens le dernier sur stack b
 void  ft_rb(t_list **stackb)
 {
-    ft_rotate(stackb);
-    write(1, "rb\n", 3);
+	ft_rotate(stackb);
+	write(1, "rb\n", 3);
 }
 
 //rotation sur a et b en meme temps
