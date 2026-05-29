@@ -34,6 +34,10 @@ t_list  *ft_switch(t_list *stack);
 void    ft_ss(t_list *stacka, t_list *stackb);
 t_list  *ft_sa(t_list *stacka);
 t_list  *ft_sb(t_list *stackb);
+void  ft_ra(t_list **stacka);
+void  ft_rb(t_list **stackb);
+void  ft_rr(t_list **stacka, t_list **stackb);
+
 
 //Fonction utiles
 t_list	*ft_lstnew(void *content);

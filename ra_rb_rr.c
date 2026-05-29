@@ -12,6 +12,23 @@
 
 #include "push_swap.h"
 
+//fonction generique de rotation normale
+void    ft_rotate(t_list **stack)
+{
+    t_list  *save;
+    t_list  *dernier;
+
+    if (!(*stack) || !(*stack)->next)
+        return ;
+    save = *stack;
+    *stack = (*stack)->next;
+    dernier = *stack;
+    while (dernier->next != NULL)
+        dernier = dernier->next;
+    dernier->next = save;
+    save->next = NULL;
+}
+
 //le premier deviens le dernier sur stack a
 void  ft_ra(t_list **stacka)
 {
@@ -32,21 +49,4 @@ void  ft_rr(t_list **stacka, t_list **stackb)
     ft_rotate(stacka);
     ft_rotate(stackb);
     write(1, "rr\n", 3);
-}
-
-//fonction generique de rotation normale
-void    ft_rotate(t_list **stack)
-{
-    t_list  *save;
-    t_list  *dernier;
-
-    if (!(*stack) || !(*stack)->next)
-        return ;
-    save = *stack;
-    *stack = (*stack)->next;
-    dernier = *stack;
-    while (dernier->next != NULL)
-        dernier = dernier->next;
-    dernier->next = save;
-    save->next = NULL;
 }
